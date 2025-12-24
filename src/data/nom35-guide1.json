@@ -1,0 +1,137 @@
+{
+    "guide": "I",
+    "title_es": "Guía de Referencia I - Acontecimientos Traumáticos Severos",
+    "title_en": "Reference Guide I - Severe Traumatic Events",
+    "description_es": "Cuestionario para identificar a los trabajadores que fueron sujetos a acontecimientos traumáticos severos",
+    "description_en": "Questionnaire to identify workers who were subjected to severe traumatic events",
+    "companySize_es": "Todas las empresas",
+    "companySize_en": "All companies",
+    "categories": [
+        {
+            "id": "traumatic-event",
+            "name_es": "Acontecimiento Traumático Severo",
+            "name_en": "Severe Traumatic Event",
+            "description_es": "Identificación de exposición a eventos traumáticos",
+            "description_en": "Identification of exposure to traumatic events",
+            "questions": [
+                {
+                    "number": 1,
+                    "text_es": "¿Ha presenciado o sufrido alguna vez, durante o con motivo del trabajo, un acontecimiento como los siguientes: ¿Accidente que tenga como consecuencia la muerte, la pérdida de un miembro o una lesión grave? ¿Asaltos? ¿Actos violentos que derivaron en lesiones graves? ¿Secuestro? ¿Amenazas? ¿Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?",
+                    "text_en": "Have you ever witnessed or suffered, during or due to work, any event such as an accident resulting in death, loss of a limb or serious injury, assaults, acts of violence causing serious injuries, kidnapping, threats, or any other event that puts your life or health or that of others at risk?",
+                    "type": "yesno"
+                }
+            ]
+        },
+        {
+            "id": "persistent-recollections",
+            "name_es": "Recuerdos Persistentes",
+            "name_en": "Persistent Recollections",
+            "description_es": "Recuerdos recurrentes del evento (último mes)",
+            "description_en": "Recurring memories of the event (last month)",
+            "questions": [
+                {
+                    "number": 2,
+                    "text_es": "¿Ha tenido recuerdos recurrentes sobre el acontecimiento que le provocan malestares?",
+                    "text_en": "Have you had recurring memories of the event that cause distress?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 3,
+                    "text_es": "¿Ha tenido sueños recurrentes sobre el acontecimiento que le provocan malestares?",
+                    "text_en": "Have you had recurring dreams about the event that cause distress?",
+                    "type": "yesno"
+                }
+            ]
+        },
+        {
+            "id": "avoidance-behaviors",
+            "name_es": "Esfuerzos por Evitar Circunstancias Similares",
+            "name_en": "Efforts to Avoid Similar Circumstances",
+            "description_es": "Comportamientos de evitación (último mes)",
+            "description_en": "Avoidance behaviors (last month)",
+            "questions": [
+                {
+                    "number": 4,
+                    "text_es": "¿Se ha esforzado por evitar todo tipo de sentimientos, conversaciones o situaciones que le puedan recordar el acontecimiento?",
+                    "text_en": "Have you made efforts to avoid all kinds of feelings, conversations or situations that may remind you of the event?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 5,
+                    "text_es": "¿Se ha esforzado por evitar todo tipo de actividades, lugares o personas que motivan recuerdos del acontecimiento?",
+                    "text_en": "Have you made efforts to avoid all kinds of activities, places or people that remind you of the event?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 6,
+                    "text_es": "¿Ha tenido dificultad para recordar alguna parte importante del evento?",
+                    "text_en": "Have you had difficulty remembering an important part of the event?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 7,
+                    "text_es": "¿Ha disminuido su interés en sus actividades cotidianas?",
+                    "text_en": "Have you lost interest in your daily activities?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 8,
+                    "text_es": "¿Se ha sentido distanciado o alejado de los demás?",
+                    "text_en": "Have you felt detached or distant from others?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 9,
+                    "text_es": "¿Ha notado que tiene dificultad para expresar sus sentimientos?",
+                    "text_en": "Have you noticed you have difficulty expressing your feelings?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 10,
+                    "text_es": "¿Ha tenido la impresión de que su vida se va a acortar, que va a morir antes que otras personas o que tiene un futuro limitado?",
+                    "text_en": "Have you had the impression that your life will be cut short, that you will die before other people or that you have a limited future?",
+                    "type": "yesno"
+                }
+            ]
+        },
+        {
+            "id": "impact-symptoms",
+            "name_es": "Afectaciones",
+            "name_en": "Impact",
+            "description_es": "Síntomas de impacto (último mes)",
+            "description_en": "Impact symptoms (last month)",
+            "questions": [
+                {
+                    "number": 11,
+                    "text_es": "¿Ha tenido problemas para dormir?",
+                    "text_en": "Have you had trouble sleeping?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 12,
+                    "text_es": "¿Ha estado particularmente irritable o le han dado arranques de coraje?",
+                    "text_en": "Have you been particularly irritable or had outbursts of anger?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 13,
+                    "text_es": "¿Ha tenido dificultad para concentrarse?",
+                    "text_en": "Have you had difficulty concentrating?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 14,
+                    "text_es": "¿Ha estado nervioso o constantemente en alerta?",
+                    "text_en": "Have you been nervous or constantly on alert?",
+                    "type": "yesno"
+                },
+                {
+                    "number": 15,
+                    "text_es": "¿Se ha sobresaltado fácilmente por cualquier cosa?",
+                    "text_en": "Have you been easily startled by anything?",
+                    "type": "yesno"
+                }
+            ]
+        }
+    ]
+}

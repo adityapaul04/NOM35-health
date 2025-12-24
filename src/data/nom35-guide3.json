@@ -1,0 +1,613 @@
+{
+    "guide": "III",
+    "title_es": "Guía de Referencia III - Factores de Riesgo Psicosocial y Evaluación del Entorno Organizacional",
+    "title_en": "Reference Guide III - Psychosocial Risk Factors and Organizational Environment Evaluation",
+    "description_es": "Cuestionario completo para identificar y analizar los factores de riesgo psicosocial y evaluar el entorno organizacional favorable (empresas de más de 50 trabajadores)",
+    "description_en": "Comprehensive questionnaire to identify and analyze psychosocial risk factors and evaluate favorable organizational environment (companies with more than 50 workers)",
+    "companySize_es": "Más de 50 trabajadores",
+    "companySize_en": "More than 50 workers",
+    "categories": [
+        {
+            "id": "workplace-conditions",
+            "name_es": "Condiciones del Lugar de Trabajo",
+            "name_en": "Workplace Conditions",
+            "description_es": "Seguridad, higiene y condiciones físicas del espacio laboral",
+            "description_en": "Safety, hygiene and physical conditions of the workplace",
+            "questions": [
+                {
+                    "number": 1,
+                    "text_es": "El espacio donde trabajo me permite realizar mis actividades de manera segura e higiénica",
+                    "text_en": "The space where I work allows me to perform my activities safely and hygienically",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "physical-demands-safety",
+            "name_es": "Demandas Físicas y Seguridad",
+            "name_en": "Physical Demands & Safety",
+            "description_es": "Esfuerzo físico, riesgos y aplicación de normas de seguridad",
+            "description_en": "Physical effort, risks and application of safety standards",
+            "questions": [
+                {
+                    "number": 2,
+                    "text_es": "Mi trabajo me exige hacer mucho esfuerzo físico",
+                    "text_en": "My job requires me to make a great physical effort",
+                    "type": "likert"
+                },
+                {
+                    "number": 3,
+                    "text_es": "Me preocupa sufrir un accidente en mi trabajo",
+                    "text_en": "I worry about having an accident at my job",
+                    "type": "likert"
+                },
+                {
+                    "number": 4,
+                    "text_es": "Considero que en mi trabajo se aplican las normas de seguridad y salud en el trabajo",
+                    "text_en": "I consider that in my workplace safety and health standards are applied",
+                    "type": "likert"
+                },
+                {
+                    "number": 5,
+                    "text_es": "Considero que las actividades que realizo son peligrosas",
+                    "text_en": "I consider that the activities I perform are dangerous",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "workload-time",
+            "name_es": "Carga de Trabajo y Tiempo",
+            "name_en": "Workload & Time",
+            "description_es": "Cantidad de trabajo, ritmo y horas laborales",
+            "description_en": "Amount of work, pace and working hours",
+            "questions": [
+                {
+                    "number": 6,
+                    "text_es": "Por la cantidad de trabajo que tengo debo quedarme tiempo adicional a mi turno",
+                    "text_en": "Because of the amount of work I have, I must stay additional time beyond my shift",
+                    "type": "likert"
+                },
+                {
+                    "number": 7,
+                    "text_es": "Por la cantidad de trabajo que tengo debo trabajar sin parar",
+                    "text_en": "Because of the amount of work I have, I must work without stopping",
+                    "type": "likert"
+                },
+                {
+                    "number": 8,
+                    "text_es": "Considero que es necesario mantener un ritmo de trabajo acelerado",
+                    "text_en": "I think it is necessary to maintain an accelerated work pace",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "mental-demands",
+            "name_es": "Demandas Mentales y Cognitivas",
+            "name_en": "Mental & Cognitive Demands",
+            "description_es": "Exigencias de concentración, memoria y toma de decisiones",
+            "description_en": "Demands of concentration, memory and decision-making",
+            "questions": [
+                {
+                    "number": 9,
+                    "text_es": "Mi trabajo exige que esté muy concentrado",
+                    "text_en": "My job requires me to be very focused",
+                    "type": "likert"
+                },
+                {
+                    "number": 10,
+                    "text_es": "Mi trabajo requiere que memorice mucha información",
+                    "text_en": "My job requires me to memorize a lot of information",
+                    "type": "likert"
+                },
+                {
+                    "number": 11,
+                    "text_es": "En mi trabajo tengo que tomar decisiones difíciles muy rápido",
+                    "text_en": "In my job I have to make difficult decisions very quickly",
+                    "type": "likert"
+                },
+                {
+                    "number": 12,
+                    "text_es": "Mi trabajo exige que atienda varios asuntos al mismo tiempo",
+                    "text_en": "My job requires me to attend to several matters at the same time",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "responsibility-role",
+            "name_es": "Responsabilidad y Rol Laboral",
+            "name_en": "Responsibility & Work Role",
+            "description_es": "Nivel de responsabilidad y órdenes contradictorias",
+            "description_en": "Level of responsibility and contradictory orders",
+            "questions": [
+                {
+                    "number": 13,
+                    "text_es": "En mi trabajo soy responsable de cosas de mucho valor",
+                    "text_en": "In my job I'm responsible for things of great value",
+                    "type": "likert"
+                },
+                {
+                    "number": 14,
+                    "text_es": "Respondo ante mi jefe por los resultados de toda mi área de trabajo",
+                    "text_en": "I answer to my boss for the results of my entire work area",
+                    "type": "likert"
+                },
+                {
+                    "number": 15,
+                    "text_es": "En el trabajo me dan órdenes contradictorias",
+                    "text_en": "In the workplace they give me contradictory orders",
+                    "type": "likert"
+                },
+                {
+                    "number": 16,
+                    "text_es": "Considero que en mi trabajo me piden hacer cosas innecesarias",
+                    "text_en": "I consider that in my job they ask me to do unnecessary things",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "work-time-balance",
+            "name_es": "Jornada Laboral y Equilibrio Vida-Trabajo",
+            "name_en": "Work Schedule & Work-Life Balance",
+            "description_es": "Horarios extendidos, trabajo en casa y balance personal",
+            "description_en": "Extended hours, work at home and personal balance",
+            "questions": [
+                {
+                    "number": 17,
+                    "text_es": "Trabajo horas extras más de tres veces a la semana",
+                    "text_en": "I work overtime more than three times a week",
+                    "type": "likert"
+                },
+                {
+                    "number": 18,
+                    "text_es": "Mi trabajo me exige laborar en días de descanso, festivos o fines de semana",
+                    "text_en": "My job requires me to work on rest days, holidays or weekends",
+                    "type": "likert"
+                },
+                {
+                    "number": 19,
+                    "text_es": "Considero que el tiempo en el trabajo es mucho y perjudica mis actividades familiares o personales",
+                    "text_en": "I consider that the time at work is a lot and harms my family or personal activities",
+                    "type": "likert"
+                },
+                {
+                    "number": 20,
+                    "text_es": "Pienso en las actividades familiares o personales cuando estoy en mi trabajo",
+                    "text_en": "I must attend to work matters when I'm at home",
+                    "type": "likert"
+                },
+                {
+                    "number": 21,
+                    "text_es": "Pienso en las actividades familiares o personales cuando estoy en mi trabajo",
+                    "text_en": "I think of family or personal activities when I'm at work",
+                    "type": "likert"
+                },
+                {
+                    "number": 22,
+                    "text_es": "Pienso que mis responsabilidades familiares afectan mi trabajo",
+                    "text_en": "I think that my family responsibilities affect my work",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "autonomy-development",
+            "name_es": "Autonomía, Desarrollo y Cambios",
+            "name_en": "Autonomy, Development & Changes",
+            "description_es": "Control sobre el trabajo, oportunidades de crecimiento y adaptación a cambios",
+            "description_en": "Control over work, growth opportunities and adaptation to changes",
+            "questions": [
+                {
+                    "number": 23,
+                    "text_es": "Mi trabajo me permite desarrollar nuevas habilidades",
+                    "text_en": "My work allows me to develop new skills",
+                    "type": "likert"
+                },
+                {
+                    "number": 24,
+                    "text_es": "En mi trabajo puedo aspirar a un mejor puesto",
+                    "text_en": "In my job I can aspire to a better position",
+                    "type": "likert"
+                },
+                {
+                    "number": 25,
+                    "text_es": "Durante mi jornada de trabajo puedo tomar pausas cuando las necesito",
+                    "text_en": "During my workday I can take breaks when I need to",
+                    "type": "likert"
+                },
+                {
+                    "number": 26,
+                    "text_es": "Puedo decidir cuánto trabajo realizo durante la jornada laboral",
+                    "text_en": "I can decide how much work I do during the workday",
+                    "type": "likert"
+                },
+                {
+                    "number": 27,
+                    "text_es": "Puedo decidir la velocidad a la que realizo mis actividades en mi trabajo",
+                    "text_en": "I can decide the speed at which I perform my activities at work",
+                    "type": "likert"
+                },
+                {
+                    "number": 28,
+                    "text_es": "Puedo cambiar el orden de las actividades que realizo en mi trabajo",
+                    "text_en": "I can change the order of the activities I carry out in my job",
+                    "type": "likert"
+                },
+                {
+                    "number": 29,
+                    "text_es": "Los cambios que se presentan en mi trabajo dificultan mi labor",
+                    "text_en": "The changes that occur at work make my job difficult",
+                    "type": "likert"
+                },
+                {
+                    "number": 30,
+                    "text_es": "Cuando se presentan cambios en mi trabajo se tienen en cuenta mis ideas o aportaciones",
+                    "text_en": "When changes occur at work, my ideas or contributions are taken into account",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "role-clarity-training",
+            "name_es": "Claridad de Funciones y Capacitación",
+            "name_en": "Role Clarity & Training",
+            "description_es": "Información clara sobre funciones, objetivos y formación",
+            "description_en": "Clear information about functions, objectives and training",
+            "questions": [
+                {
+                    "number": 31,
+                    "text_es": "Me informan con claridad cuáles son mis funciones",
+                    "text_en": "I am clearly informed of what my functions are",
+                    "type": "likert"
+                },
+                {
+                    "number": 32,
+                    "text_es": "Me explican claramente los resultados que debo obtener en mi trabajo",
+                    "text_en": "They clearly explain the results I must obtain in my job",
+                    "type": "likert"
+                },
+                {
+                    "number": 33,
+                    "text_es": "Me explican claramente los objetivos de mi trabajo",
+                    "text_en": "They clearly explain the objectives of my work",
+                    "type": "likert"
+                },
+                {
+                    "number": 34,
+                    "text_es": "Me informan con quién puedo resolver problemas o asuntos de trabajo",
+                    "text_en": "I'm informed with whom I can solve work problems or issues",
+                    "type": "likert"
+                },
+                {
+                    "number": 35,
+                    "text_es": "Me permiten asistir a capacitaciones relacionadas con mi trabajo",
+                    "text_en": "I'm allowed to attend training related to my job",
+                    "type": "likert"
+                },
+                {
+                    "number": 36,
+                    "text_es": "Recibo capacitación útil para hacer mi trabajo",
+                    "text_en": "I receive useful training to do my job",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "leadership",
+            "name_es": "Liderazgo y Supervisión",
+            "name_en": "Leadership & Supervision",
+            "description_es": "Relación con jefes, organización del trabajo y comunicación",
+            "description_en": "Relationship with bosses, work organization and communication",
+            "questions": [
+                {
+                    "number": 37,
+                    "text_es": "Mi jefe ayuda a organizar mejor el trabajo",
+                    "text_en": "My boss helps to organize the work better",
+                    "type": "likert"
+                },
+                {
+                    "number": 38,
+                    "text_es": "Mi jefe tiene en cuenta mis puntos de vista y opiniones",
+                    "text_en": "My boss takes my points of view and opinions into account",
+                    "type": "likert"
+                },
+                {
+                    "number": 39,
+                    "text_es": "Mi jefe me comunica a tiempo la información relacionada con el trabajo",
+                    "text_en": "My boss communicates the information related to work in time",
+                    "type": "likert"
+                },
+                {
+                    "number": 40,
+                    "text_es": "La orientación que me da mi jefe me ayuda a realizar mejor mi trabajo",
+                    "text_en": "The guidance my boss gives me helps me to perform my work better",
+                    "type": "likert"
+                },
+                {
+                    "number": 41,
+                    "text_es": "Mi jefe ayuda a solucionar los problemas que se presentan en el trabajo",
+                    "text_en": "My boss helps solve the problems that occur at work",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "social-support-teamwork",
+            "name_es": "Apoyo Social y Trabajo en Equipo",
+            "name_en": "Social Support & Teamwork",
+            "description_es": "Relaciones con compañeros, colaboración y sentido de pertenencia",
+            "description_en": "Relationships with colleagues, collaboration and sense of belonging",
+            "questions": [
+                {
+                    "number": 42,
+                    "text_es": "Puedo confiar en mis compañeros de trabajo",
+                    "text_en": "I can trust my co-workers",
+                    "type": "likert"
+                },
+                {
+                    "number": 43,
+                    "text_es": "Entre compañeros solucionamos los problemas de trabajo de forma respetuosa",
+                    "text_en": "Among colleagues we solve work problems respectfully",
+                    "type": "likert"
+                },
+                {
+                    "number": 44,
+                    "text_es": "En mi trabajo me hacen sentir parte del grupo",
+                    "text_en": "At work they make me feel part of the group",
+                    "type": "likert"
+                },
+                {
+                    "number": 45,
+                    "text_es": "Cuando tenemos que realizar trabajo de equipo los compañeros colaboran",
+                    "text_en": "When we have to do teamwork, colleagues cooperate",
+                    "type": "likert"
+                },
+                {
+                    "number": 46,
+                    "text_es": "Mis compañeros de trabajo me ayudan cuando tengo dificultades",
+                    "text_en": "My co-workers help me when I have difficulties",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "recognition-stability",
+            "name_es": "Reconocimiento, Estabilidad y Compromiso",
+            "name_en": "Recognition, Stability & Commitment",
+            "description_es": "Valoración del trabajo, estabilidad laboral y compromiso organizacional",
+            "description_en": "Work recognition, job stability and organizational commitment",
+            "questions": [
+                {
+                    "number": 47,
+                    "text_es": "Me informan sobre lo que hago bien en mi trabajo",
+                    "text_en": "I am told what I do well in my work",
+                    "type": "likert"
+                },
+                {
+                    "number": 48,
+                    "text_es": "La forma como evalúan mi trabajo en mi centro de trabajo me ayuda a mejorar mi desempeño",
+                    "text_en": "The way my work is evaluated at my workplace helps me improve my performance",
+                    "type": "likert"
+                },
+                {
+                    "number": 49,
+                    "text_es": "En mi centro de trabajo me pagan a tiempo mi salario",
+                    "text_en": "At my workplace they pay my salary on time",
+                    "type": "likert"
+                },
+                {
+                    "number": 50,
+                    "text_es": "El pago que recibo es el que merezco por el trabajo que realizo",
+                    "text_en": "The pay I receive is what I deserve for the work I do",
+                    "type": "likert"
+                },
+                {
+                    "number": 51,
+                    "text_es": "Si obtengo los resultados esperados en mi trabajo me recompensan o reconocen",
+                    "text_en": "If I obtain the expected results in my work they reward or recognize me",
+                    "type": "likert"
+                },
+                {
+                    "number": 52,
+                    "text_es": "Las personas que hacen bien el trabajo pueden crecer laboralmente",
+                    "text_en": "People who do the job well can grow professionally",
+                    "type": "likert"
+                },
+                {
+                    "number": 53,
+                    "text_es": "Considero que mi trabajo es estable",
+                    "text_en": "I consider that my job is stable",
+                    "type": "likert"
+                },
+                {
+                    "number": 54,
+                    "text_es": "En mi centro de trabajo existe continua rotación de personal",
+                    "text_en": "There is continuous staff turnover in my workplace",
+                    "type": "likert"
+                },
+                {
+                    "number": 55,
+                    "text_es": "Siento orgullo de laborar en este centro de trabajo",
+                    "text_en": "I feel proud to work at this workplace",
+                    "type": "likert"
+                },
+                {
+                    "number": 56,
+                    "text_es": "Me siento comprometido con mi trabajo",
+                    "text_en": "I feel committed to my work",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "violence-harassment",
+            "name_es": "Violencia y Acoso Laboral",
+            "name_en": "Violence & Workplace Harassment",
+            "description_es": "Experiencias de violencia, acoso o intimidación en el trabajo",
+            "description_en": "Experiences of violence, harassment or intimidation at work",
+            "questions": [
+                {
+                    "number": 57,
+                    "text_es": "En mi centro de trabajo puedo expresarme libremente sin interrupciones",
+                    "text_en": "At my workplace I can express myself freely without interruptions",
+                    "type": "likert"
+                },
+                {
+                    "number": 58,
+                    "text_es": "Recibo críticas constantes a mi persona y/o trabajo",
+                    "text_en": "I receive constant criticism of my person and/or work",
+                    "type": "likert"
+                },
+                {
+                    "number": 59,
+                    "text_es": "Recibo burlas, calumnias, difamaciones, humillaciones o ridiculizaciones",
+                    "text_en": "I receive mockery, slander, defamation, humiliations or ridicule",
+                    "type": "likert"
+                },
+                {
+                    "number": 60,
+                    "text_es": "Se ignora mi presencia o se me excluye de las reuniones de trabajo y en la toma de decisiones",
+                    "text_en": "My presence is ignored or I am excluded from work meetings and decision-making",
+                    "type": "likert"
+                },
+                {
+                    "number": 61,
+                    "text_es": "Se manipulan las situaciones de trabajo para hacerme parecer un mal trabajador",
+                    "text_en": "Situations are manipulated at work to make me appear a bad worker",
+                    "type": "likert"
+                },
+                {
+                    "number": 62,
+                    "text_es": "Se ignoran mis éxitos laborales y se atribuyen a otros trabajadores",
+                    "text_en": "My work achievements are ignored and attributed to other workers",
+                    "type": "likert"
+                },
+                {
+                    "number": 63,
+                    "text_es": "Me bloquean o impiden las oportunidades que tengo para obtener ascenso o mejora en mi trabajo",
+                    "text_en": "They block or hinder the opportunities I have to obtain promotion or improvement in my job",
+                    "type": "likert"
+                },
+                {
+                    "number": 64,
+                    "text_es": "He presenciado actos de violencia en mi centro de trabajo",
+                    "text_en": "I have witnessed acts of violence at my workplace",
+                    "type": "likert"
+                }
+            ]
+        },
+        {
+            "id": "client-service",
+            "name_es": "Atención a Clientes y Usuarios",
+            "name_en": "Customer & User Service",
+            "description_es": "Demandas emocionales en atención al cliente (solo si aplica)",
+            "description_en": "Emotional demands in customer service (only if applicable)",
+            "questions": [
+                {
+                    "number": 0,
+                    "text_es": "En mi trabajo debo brindar servicio a clientes o usuarios",
+                    "text_en": "In my job I must provide service to clients or users",
+                    "type": "yesno"
+                },
+                {
+                    "number": 65,
+                    "text_es": "Atiendo clientes o usuarios muy enojados",
+                    "text_en": "I attend to very angry clients or users",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "ServiceClients",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 66,
+                    "text_es": "Mi trabajo me exige atender personas muy necesitadas de ayuda o enfermas",
+                    "text_en": "My job requires me to attend to people who are very needy for help or sick",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "ServiceClients",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 67,
+                    "text_es": "Para hacer mi trabajo debo demostrar sentimientos distintos a los míos",
+                    "text_en": "To do my job I must show feelings different from mine",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "ServiceClients",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 68,
+                    "text_es": "Mi trabajo me exige atender situaciones de violencia",
+                    "text_en": "My job requires me to attend to situations of violence",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "ServiceClients",
+                        "showIf": "Sí"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "subordinate-management",
+            "name_es": "Supervisión de Personal",
+            "name_en": "Staff Supervision",
+            "description_es": "Dificultades en la gestión de subordinados (solo si aplica)",
+            "description_en": "Difficulties in managing subordinates (only if applicable)",
+            "questions": [
+                {
+                    "number": 0,
+                    "text_es": "Soy jefe de otros trabajadores",
+                    "text_en": "I am a boss of other workers",
+                    "type": "yesno"
+                },
+                {
+                    "number": 69,
+                    "text_es": "Comunican tarde los asuntos de trabajo",
+                    "text_en": "They communicate work matters late",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "Boss",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 70,
+                    "text_es": "Dificultan el logro de los resultados del trabajo",
+                    "text_en": "They make it difficult to achieve work results",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "Boss",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 71,
+                    "text_es": "Cooperan poco cuando se necesita",
+                    "text_en": "They cooperate little when needed",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "Boss",
+                        "showIf": "Sí"
+                    }
+                },
+                {
+                    "number": 72,
+                    "text_es": "Ignoran las sugerencias para mejorar su trabajo",
+                    "text_en": "They ignore suggestions to improve their work",
+                    "type": "likert",
+                    "conditional": {
+                        "dependsOn": "Boss",
+                        "showIf": "Sí"
+                    }
+                }
+            ]
+        }
+    ]
+}
