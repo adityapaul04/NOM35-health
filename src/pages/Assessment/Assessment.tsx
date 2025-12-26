@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, AlertCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, AlertCircle, X } from "lucide-react";
 import { useAssessment } from "@/context/AssessmentContext";
 import GuideSelector from "@/components/GuideSelector";
 import QuestionCard from "@/components/QuestionCard";
@@ -12,7 +12,6 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import type { GuideType, LikertValue, YesNoValue, NOM35Guide, Question } from "@/types/nom35";
 import type { ImportedResponse, ImportValidation } from "@/types/import";
 
-// Import guide data
 import guide1Data from "@/data/nom35-guide1.json";
 import guide2Data from "@/data/nom35-guide2.json";
 import guide3Data from "@/data/nom35-guide3.json";
@@ -37,10 +36,10 @@ export default function Assessment() {
         setConditionalAnswer,
         completedCategories,
         clearAssessment,
-        completeAssessment,
         setImportedData,
         setImportSource,
         setImportMetadata,
+        currentAssessment,
     } = useAssessment();
 
     const [validationError, setValidationError] = useState<string | null>(null);
@@ -49,7 +48,12 @@ export default function Assessment() {
     const categories = currentGuide?.categories || [];
     const currentCategory = categories[currentCategoryIndex];
 
-    // Scroll to top when category changes
+    useEffect(() => {
+        if (currentAssessment?.status === "completed") {
+            clearAssessment();
+        }
+    }, [currentAssessment, clearAssessment]);
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, [currentCategoryIndex]);
@@ -58,6 +62,16 @@ export default function Assessment() {
         clearAssessment();
         setSelectedGuide(guide);
         setCurrentCategoryIndex(0);
+    };
+
+    const handleChangeGuide = () => {
+        if (window.confirm(
+            i18n.language === "es"
+                ? "¿Estás seguro de que quieres cambiar de guía? Se perderá todo el progreso actual."
+                : "Are you sure you want to change guides? All current progress will be lost."
+        )) {
+            clearAssessment();
+        }
     };
 
     const handleImportComplete = (
@@ -175,7 +189,10 @@ export default function Assessment() {
     };
 
     const handleNext = () => {
-        if (!validateCurrentCategory()) return;
+        if (!validateCurrentCategory()) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
 
         if (currentCategoryIndex < categories.length - 1) {
             setCurrentCategoryIndex(currentCategoryIndex + 1);
@@ -189,10 +206,11 @@ export default function Assessment() {
     };
 
     const handleSubmit = () => {
-        if (!validateCurrentCategory()) return;
-
-        completeAssessment();
-        navigate("/report");
+        if (!validateCurrentCategory()) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
+        navigate("/assessment/review");
     };
 
     const isLastCategory = currentCategoryIndex === categories.length - 1;
@@ -224,7 +242,21 @@ export default function Assessment() {
     // Show assessment questions
     return (
         <div className="container mx-auto px-4 py-8 max-w-4xl pb-32">
-            {/* Progress Stepper - FIXED */}
+            <div className="mb-6 flex items-center justify-between">
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleChangeGuide}
+                    className="gap-2"
+                >
+                    <X className="h-4 w-4" />
+                    {i18n.language === "es" ? "Cambiar Guía" : "Change Guide"}
+                </Button>
+                <div className="text-sm text-muted-foreground">
+                    {i18n.language === "es" ? "Guía" : "Guide"} {selectedGuide}
+                </div>
+            </div>
+
             <ProgressStepper
                 currentStep={currentCategoryIndex}
                 totalSteps={categories.length}

@@ -15,7 +15,62 @@
     "back": "Regresar",
     "processing": "Procesando...",
     "more": "más",
-    "questions": "preguntas"
+    "questions": "preguntas",
+    "error": "Error",
+    "success": "Éxito",
+    "confirm": "Confirmar",
+    "view": "Ver",
+    "download": "Descargar",
+    "print": "Imprimir"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "subtitle": "Ingresa tus credenciales para acceder a tu panel",
+      "tagline": "Tu plataforma integral para evaluaciones de bienestar psicosocial",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "password": "Contraseña",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "signInButton": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "createAccount": "Crear cuenta",
+      "terms": "Al iniciar sesión, aceptas nuestros Términos de Servicio y Política de Privacidad",
+      "compliance": "Cumplimiento",
+      "confidential": "Confidencial",
+      "showPassword": "Mostrar contraseña",
+      "hidePassword": "Ocultar contraseña",
+      "toggleTheme": "Cambiar tema",
+      "changeLanguage": "Cambiar idioma"
+    },
+    "signup": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Regístrate para acceder a tu panel",
+      "tagline": "Únete a wellpedia.ai y comienza a gestionar el bienestar de tu equipo",
+      "fullName": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Crea una contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Confirma tu contraseña",
+      "createAccountButton": "Crear cuenta",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión",
+      "terms": "Al crear una cuenta, aceptas nuestros Términos de Servicio y Política de Privacidad",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "showPassword": "Mostrar contraseña",
+      "hidePassword": "Ocultar contraseña",
+      "toggleTheme": "Cambiar tema",
+      "changeLanguage": "Cambiar idioma",
+      "features": {
+        "assessments": "✓ Evaluaciones NOM-035",
+        "reports": "✓ Reportes instantáneos",
+        "tracking": "✓ Seguimiento histórico",
+        "confidential": "✓ 100% Confidencial"
+      }
+    }
   },
   "header": {
     "profile": "Perfil",
@@ -46,7 +101,22 @@
     "tipActive": "🏃 Mantente Activo",
     "tipActiveDesc": "Busca 30 minutos de actividad física cada día",
     "tipSleep": "😴 Duerme Bien",
-    "tipSleepDesc": "Obtén 7-8 horas de sueño de calidad cada noche"
+    "tipSleepDesc": "Obtén 7-8 horas de sueño de calidad cada noche",
+    "assessments": "Evaluaciones",
+    "completed": "Completado",
+    "progress": "Progreso",
+    "categoryBreakdown": "Desglose por Categoría",
+    "additionalInfo": "Información Adicional",
+    "servesClients": "Atiende clientes/usuarios:",
+    "managesWorkers": "Es jefe de otros trabajadores:",
+    "question": "Pregunta",
+    "backToPanel": "Volver al Panel",
+    "duration": "Duración: 10-20 minutos",
+    "instantReport": "Reporte Instantáneo",
+    "confidential": "100% Confidencial",
+    "assessmentInProgress": "Evaluación en Progreso",
+    "continueAssessment": "Continuar",
+    "discardDraft": "Descartar"
   },
   "assessment": {
     "title": "Evaluación NOM-035",
@@ -100,7 +170,10 @@
     "completionProgress": "Progreso de Completación",
     "missingQuestionsAlert": "Hay preguntas sin responder. Puedes editarlas o continuar al reporte.",
     "editAnswers": "Editar Respuestas",
-    "continueToReport": "Continuar al Reporte"
+    "continueToReport": "Continuar al Reporte",
+    "changeGuide": "Cambiar Guía",
+    "guide": "Guía",
+    "step": "Paso"
   },
   "report": {
     "title": "Tu Reporte NOM-035",
@@ -119,12 +192,31 @@
     "category": "Categoría",
     "riskLevel": "Nivel de Riesgo",
     "recommendations": "Recomendaciones",
-    "disclaimer": "Este reporte es únicamente para fines informativos y de bienestar y no constituye asesoramiento médico o legal. Para interpretación oficial de resultados NOM-035, consulte con un profesional certificado.",
+    "disclaimer": "Este reporte es generado automáticamente basado en la NOM-035-STPS-2018. Se recomienda consultar con un especialista en salud ocupacional para la interpretación completa de los resultados y el diseño de intervenciones específicas.",
     "startNewAssessment": "Iniciar Nueva Evaluación",
     "riskNulo": "Nulo",
     "riskBajo": "Bajo",
     "riskMedio": "Medio",
     "riskAlto": "Alto",
-    "riskMuyAlto": "Muy Alto"
+    "riskMuyAlto": "Muy Alto",
+    "responseSummary": "Resumen de Respuestas",
+    "referenceGuide": "Guía de Referencia",
+    "assessmentDate": "Fecha de Evaluación"
+  },
+  "upload": {
+    "title": "Subir Evaluación",
+    "selectGuide": "Seleccionar Guía de Evaluación",
+    "uploadFile": "Subir Archivo Excel",
+    "dragDrop": "Arrastra y suelta tu archivo Excel aquí, o haz clic para explorar",
+    "downloadTemplate": "Descargar Plantilla",
+    "validating": "Validando...",
+    "validationResults": "Resultados de Validación",
+    "errorsFound": "errores encontrados",
+    "warningsFound": "advertencias encontradas",
+    "questionsImported": "preguntas importadas exitosamente",
+    "missingQuestions": "preguntas faltantes",
+    "importButton": "Importar Evaluación",
+    "cancelButton": "Cancelar",
+    "close": "Cerrar"
   }
 }

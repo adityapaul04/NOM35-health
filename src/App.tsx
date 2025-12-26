@@ -8,6 +8,8 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Assessment from './pages/Assessment/Assessment'
 import Report from './pages/Report/Report'
 import AssessmentReview from './pages/Assessment/AssessmentReview'
+import Login from './pages/Auth/Login'
+import Signup from './pages/Auth/Signup'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <AssessmentProvider>
         <Router>
           <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Layout />}>
               <Route index element={<Dashboard />} />
               <Route path="/assessment" element={<Assessment />} />

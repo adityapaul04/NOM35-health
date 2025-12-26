@@ -6,8 +6,6 @@ import { Edit, FileText, ArrowLeft } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAssessment } from "@/context/AssessmentContext";
 import { generateNOM35Report } from "@/utils/nom35Calculations";
-
-// Import guide data to get total questions
 import guide1Data from "@/data/nom35-guide1.json";
 import guide2Data from "@/data/nom35-guide2.json";
 import guide3Data from "@/data/nom35-guide3.json";
@@ -16,35 +14,32 @@ import NOM35Report from "@/components/NOM35Report";
 export default function Report() {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
-    const { assessment, clearAssessment } = useAssessment();
+    const { currentAssessment, clearAssessment } = useAssessment();
     const isSpanish = i18n.language === "es";
 
-    // Redirect if no assessment data
     useEffect(() => {
-        if (!assessment) {
+        if (!currentAssessment) {
             navigate("/assessment");
         }
-    }, [assessment, navigate]);
+    }, [currentAssessment, navigate]);
 
-    if (!assessment) {
+    if (!currentAssessment) {
         return null;
     }
 
-    // Get total questions based on guide type
     const getTotalQuestions = () => {
-        if (assessment.guideType === "I") {
+        if (currentAssessment.guideType === "I") {
             return guide1Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
-        } else if (assessment.guideType === "II") {
+        } else if (currentAssessment.guideType === "II") {
             return guide2Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
         } else {
             return guide3Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
         }
     };
 
-    // Generate NOM-35 report
     const reportData = generateNOM35Report(
-        assessment.guideType,
-        assessment.responses,
+        currentAssessment.guideType,
+        currentAssessment.responses,
         getTotalQuestions()
     );
 
@@ -65,12 +60,11 @@ export default function Report() {
         navigate("/");
     };
 
-    // Get guide title
     const getGuideTitle = () => {
         const guideData =
-            assessment.guideType === "I"
+            currentAssessment.guideType === "I"
                 ? guide1Data
-                : assessment.guideType === "II"
+                : currentAssessment.guideType === "II"
                     ? guide2Data
                     : guide3Data;
 
@@ -79,7 +73,6 @@ export default function Report() {
 
     return (
         <div className="p-6 space-y-6">
-            {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 print:hidden">
                 <div>
                     <h1 className="text-2xl font-semibold">{t("report.title")}</h1>
@@ -101,9 +94,7 @@ export default function Report() {
                 </div>
             </div>
 
-            {/* Main Content - Two Column Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Left Column: Assessment Summary */}
                 <div className="space-y-6">
                     <Card>
                         <CardHeader>
@@ -113,7 +104,6 @@ export default function Report() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            {/* Guide Information */}
                             <div>
                                 <p className="text-sm text-muted-foreground mb-1">
                                     {t("assessment.selectGuide")}
@@ -121,13 +111,12 @@ export default function Report() {
                                 <p className="font-medium">{getGuideTitle()}</p>
                             </div>
 
-                            {/* Completion Date */}
                             <div>
                                 <p className="text-sm text-muted-foreground mb-1">
                                     {t("report.completionDate")}
                                 </p>
                                 <p className="font-medium">
-                                    {new Date(assessment.completedAt || "").toLocaleDateString(
+                                    {new Date(currentAssessment.completedAt || "").toLocaleDateString(
                                         isSpanish ? "es-MX" : "en-US",
                                         {
                                             year: "numeric",
@@ -140,7 +129,6 @@ export default function Report() {
                                 </p>
                             </div>
 
-                            {/* Questions Stats */}
                             <div className="grid grid-cols-2 gap-4 pt-2">
                                 <div className="p-3 bg-muted/50 rounded-lg">
                                     <p className="text-xs text-muted-foreground mb-1">
@@ -156,15 +144,14 @@ export default function Report() {
                                 </div>
                             </div>
 
-                            {/* Conditional Answers Summary */}
-                            {(assessment.conditionalAnswers.ServiceClients ||
-                                assessment.conditionalAnswers.Boss) && (
+                            {(currentAssessment.conditionalAnswers.ServiceClients ||
+                                currentAssessment.conditionalAnswers.Boss) && (
                                     <div className="pt-2 border-t">
                                         <p className="text-sm font-medium mb-2">
                                             {isSpanish ? "Información Adicional" : "Additional Information"}
                                         </p>
                                         <div className="space-y-1 text-sm">
-                                            {assessment.conditionalAnswers.ServiceClients && (
+                                            {currentAssessment.conditionalAnswers.ServiceClients && (
                                                 <p>
                                                     <span className="text-muted-foreground">
                                                         {isSpanish
@@ -172,11 +159,11 @@ export default function Report() {
                                                             : "Serves clients/users:"}{" "}
                                                     </span>
                                                     <span className="font-medium">
-                                                        {assessment.conditionalAnswers.ServiceClients}
+                                                        {currentAssessment.conditionalAnswers.ServiceClients}
                                                     </span>
                                                 </p>
                                             )}
-                                            {assessment.conditionalAnswers.Boss && (
+                                            {currentAssessment.conditionalAnswers.Boss && (
                                                 <p>
                                                     <span className="text-muted-foreground">
                                                         {isSpanish
@@ -184,7 +171,7 @@ export default function Report() {
                                                             : "Manages other workers:"}{" "}
                                                     </span>
                                                     <span className="font-medium">
-                                                        {assessment.conditionalAnswers.Boss}
+                                                        {currentAssessment.conditionalAnswers.Boss}
                                                     </span>
                                                 </p>
                                             )}
@@ -194,7 +181,6 @@ export default function Report() {
                         </CardContent>
                     </Card>
 
-                    {/* Response Summary Card */}
                     <Card>
                         <CardHeader>
                             <CardTitle>
@@ -203,7 +189,7 @@ export default function Report() {
                         </CardHeader>
                         <CardContent>
                             <div className="space-y-2 max-h-96 overflow-y-auto">
-                                {assessment.responses
+                                {currentAssessment.responses
                                     .filter((r) => r.questionNumber > 0)
                                     .sort((a, b) => a.questionNumber - b.questionNumber)
                                     .map((response) => (
@@ -222,13 +208,11 @@ export default function Report() {
                     </Card>
                 </div>
 
-                {/* Right Column: NOM-35 Report */}
                 <div className="space-y-6">
                     <NOM35Report result={reportData} />
                 </div>
             </div>
 
-            {/* Bottom Actions */}
             <div className="flex justify-center gap-4 print:hidden pt-6 border-t">
                 <Button onClick={handleBackToDashboard} variant="outline">
                     {isSpanish ? "Volver al Panel" : "Back to Dashboard"}
@@ -238,14 +222,13 @@ export default function Report() {
                 </Button>
             </div>
 
-            {/* Print Styles */}
             <style>{`
-        @media print {
-          .print\\:hidden {
-            display: none !important;
-          }
-        }
-      `}</style>
+                @media print {
+                    .print\\:hidden {
+                        display: none !important;
+                    }
+                }
+            `}</style>
         </div>
     );
 }

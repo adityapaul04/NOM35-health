@@ -15,7 +15,62 @@
     "back": "Back",
     "processing": "Processing...",
     "more": "more",
-    "questions": "questions"
+    "questions": "questions",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "view": "View",
+    "download": "Download",
+    "print": "Print"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "subtitle": "Enter your credentials to access your dashboard",
+      "tagline": "Your comprehensive platform for psychosocial wellness assessments",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "signInButton": "Sign in",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "terms": "By signing in, you agree to our Terms of Service and Privacy Policy",
+      "compliance": "Compliance",
+      "confidential": "Confidential",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "toggleTheme": "Toggle theme",
+      "changeLanguage": "Change language"
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Sign up to access your dashboard",
+      "tagline": "Join wellpedia.ai and start managing your team's wellness",
+      "fullName": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "createAccountButton": "Create account",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "terms": "By creating an account, you agree to our Terms of Service and Privacy Policy",
+      "passwordMismatch": "Passwords do not match",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "toggleTheme": "Toggle theme",
+      "changeLanguage": "Change language",
+      "features": {
+        "assessments": "✓ NOM-035 Assessments",
+        "reports": "✓ Instant reports",
+        "tracking": "✓ Historical tracking",
+        "confidential": "✓ 100% Confidential"
+      }
+    }
   },
   "header": {
     "profile": "Profile",
@@ -46,7 +101,22 @@
     "tipActive": "🏃 Stay Active",
     "tipActiveDesc": "Aim for 30 minutes of physical activity each day",
     "tipSleep": "😴 Sleep Well",
-    "tipSleepDesc": "Get 7-8 hours of quality sleep every night"
+    "tipSleepDesc": "Get 7-8 hours of quality sleep every night",
+    "assessments": "Assessments",
+    "completed": "Completed",
+    "progress": "Progress",
+    "categoryBreakdown": "Category Breakdown",
+    "additionalInfo": "Additional Information",
+    "servesClients": "Serves clients/users:",
+    "managesWorkers": "Manages other workers:",
+    "question": "Question",
+    "backToPanel": "Back to Dashboard",
+    "duration": "Duration: 10-20 minutes",
+    "instantReport": "Instant Report",
+    "confidential": "100% Confidential",
+    "assessmentInProgress": "Assessment in Progress",
+    "continueAssessment": "Continue",
+    "discardDraft": "Discard"
   },
   "assessment": {
     "title": "NOM-035 Assessment",
@@ -100,7 +170,10 @@
     "completionProgress": "Completion Progress",
     "missingQuestionsAlert": "There are unanswered questions. You can edit them or continue to the report.",
     "editAnswers": "Edit Answers",
-    "continueToReport": "Continue to Report"
+    "continueToReport": "Continue to Report",
+    "changeGuide": "Change Guide",
+    "guide": "Guide",
+    "step": "Step"
   },
   "report": {
     "title": "Your NOM-035 Report",
@@ -119,12 +192,31 @@
     "category": "Category",
     "riskLevel": "Risk Level",
     "recommendations": "Recommendations",
-    "disclaimer": "This report is for informational and wellness purposes only and does not constitute medical or legal advice. For official NOM-035 results interpretation, consult with a certified professional.",
+    "disclaimer": "This report is automatically generated based on NOM-035-STPS-2018. It is recommended to consult with an occupational health specialist for complete interpretation of results and design of specific interventions.",
     "startNewAssessment": "Start New Assessment",
     "riskNulo": "None",
     "riskBajo": "Low",
     "riskMedio": "Medium",
     "riskAlto": "High",
-    "riskMuyAlto": "Very High"
+    "riskMuyAlto": "Very High",
+    "responseSummary": "Response Summary",
+    "referenceGuide": "Reference Guide",
+    "assessmentDate": "Assessment Date"
+  },
+  "upload": {
+    "title": "Upload Assessment",
+    "selectGuide": "Select Assessment Guide",
+    "uploadFile": "Upload Excel File",
+    "dragDrop": "Drag and drop your Excel file here, or click to browse",
+    "downloadTemplate": "Download Template",
+    "validating": "Validating...",
+    "validationResults": "Validation Results",
+    "errorsFound": "errors found",
+    "warningsFound": "warnings found",
+    "questionsImported": "questions imported successfully",
+    "missingQuestions": "missing questions",
+    "importButton": "Import Assessment",
+    "cancelButton": "Cancel",
+    "close": "Close"
   }
 }

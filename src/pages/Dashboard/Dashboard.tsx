@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
     ClipboardList,
     TrendingUp,
@@ -17,6 +18,7 @@ import {
     CheckCircle2,
     Clock,
     ShieldCheck,
+    AlertCircle,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAssessment } from "@/context/AssessmentContext";
@@ -31,24 +33,25 @@ import guide3Data from "@/data/nom35-guide3.json";
 export default function Dashboard() {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
-    const { assessment } = useAssessment();
+    const { assessments, hasDraft, clearDraft, clearAssessment, selectedGuide, responses, loadAssessment } = useAssessment();
     const isSpanish = i18n.language === "es";
 
-    // Generate report if assessment exists
-    const reportData = assessment
+    const latestAssessment = assessments.length > 0 ? assessments[0] : null;
+
+    const reportData = latestAssessment
         ? (() => {
             const getTotalQuestions = () => {
-                if (assessment.guideType === "I") {
+                if (latestAssessment.guideType === "I") {
                     return guide1Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
-                } else if (assessment.guideType === "II") {
+                } else if (latestAssessment.guideType === "II") {
                     return guide2Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
                 } else {
                     return guide3Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
                 }
             };
             return generateNOM35Report(
-                assessment.guideType,
-                assessment.responses,
+                latestAssessment.guideType,
+                latestAssessment.responses,
                 getTotalQuestions()
             );
         })()
@@ -95,7 +98,51 @@ export default function Dashboard() {
                 </p>
             </div>
 
-            {/* Stats Row - Kept as requested */}
+            {!reportData && hasDraft && (
+                <Alert className="border-primary/50 bg-primary/5">
+                    <AlertCircle className="h-4 w-4 text-primary" />
+                    <AlertTitle className="text-primary font-semibold">
+                        {isSpanish ? "Evaluación en Progreso" : "Assessment in Progress"}
+                    </AlertTitle>
+                    <AlertDescription className="mt-2">
+                        <div className="flex items-center justify-between gap-4">
+                            <div>
+                                <p className="text-sm mb-1">
+                                    {isSpanish
+                                        ? `Tienes una evaluación Guía ${selectedGuide} sin completar con ${responses.length} respuestas guardadas.`
+                                        : `You have an incomplete Guide ${selectedGuide} assessment with ${responses.length} saved responses.`}
+                                </p>
+                                <p className="text-xs text-muted-foreground">
+                                    {isSpanish
+                                        ? "Puedes continuar donde lo dejaste o comenzar una nueva evaluación."
+                                        : "You can continue where you left off or start a new assessment."}
+                                </p>
+                            </div>
+                            <div className="flex gap-2">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                        clearDraft();
+                                        clearAssessment();
+                                    }}
+                                >
+                                    {isSpanish ? "Descartar" : "Discard"}
+                                </Button>
+                                <Button
+                                    size="sm"
+                                    onClick={() => navigate("/assessment")}
+                                    className="bg-primary hover:bg-primary/90"
+                                >
+                                    {isSpanish ? "Continuar" : "Continue"}
+                                    <ArrowRight className="h-4 w-4 ml-2" />
+                                </Button>
+                            </div>
+                        </div>
+                    </AlertDescription>
+                </Alert>
+            )}
+
             {reportData && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {/* Stat 1: Total Assessments */}
@@ -106,7 +153,7 @@ export default function Dashboard() {
                                     <p className="text-sm font-medium text-muted-foreground">
                                         {isSpanish ? "Evaluaciones" : "Assessments"}
                                     </p>
-                                    <p className="text-3xl font-bold text-primary">1</p>
+                                    <p className="text-3xl font-bold text-primary">{assessments.length}</p>
                                 </div>
                                 <BarChart3 className="h-10 w-10 text-primary opacity-60" />
                             </div>
@@ -166,7 +213,6 @@ export default function Dashboard() {
                 </div>
             )}
 
-            {/* MY RISK SCORE - Full Width Hero */}
             {/* MY RISK SCORE - Full Width Hero with 2 Columns */}
             <Card className="border-2 border-primary/20">
                 <CardHeader>
@@ -254,7 +300,12 @@ export default function Dashboard() {
 
                                 {/* View Report Button - At Bottom of Right Column */}
                                 <Button
-                                    onClick={() => navigate("/report")}
+                                    onClick={() => {
+                                        if (latestAssessment) {
+                                            loadAssessment(latestAssessment.id);
+                                        }
+                                        navigate("/report");
+                                    }}
                                     className="w-full cursor-pointer bg-primary hover:bg-primary/90"
                                 >
                                     <FileText className="h-4 w-4 mr-2" />
@@ -294,59 +345,84 @@ export default function Dashboard() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        {assessment ? (
-                            <div className="space-y-3">
-                                <div className="flex items-center justify-between p-4 rounded-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
-                                    <div className="space-y-1">
-                                        <div className="flex items-center gap-2">
-                                            <Badge variant="outline" className="border-primary/50">
-                                                {isSpanish ? "Guía" : "Guide"} {assessment.guideType}
-                                            </Badge>
-                                            {reportData && (
-                                                <Badge
-                                                    variant={
-                                                        reportData.overallRisk.level === "Alto" ||
-                                                            reportData.overallRisk.level === "Muy Alto"
-                                                            ? "destructive"
-                                                            : reportData.overallRisk.level === "Medio"
-                                                                ? "default"
-                                                                : "secondary"
-                                                    }
+                        {assessments.length > 0 ? (
+                            <div className="space-y-3 max-h-96 overflow-y-auto">
+                                {assessments.map((assessment) => {
+                                    const assessmentReport = (() => {
+                                        const getTotalQuestions = () => {
+                                            if (assessment.guideType === "I") {
+                                                return guide1Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
+                                            } else if (assessment.guideType === "II") {
+                                                return guide2Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
+                                            } else {
+                                                return guide3Data.categories.reduce((sum, cat) => sum + cat.questions.length, 0);
+                                            }
+                                        };
+                                        return generateNOM35Report(
+                                            assessment.guideType,
+                                            assessment.responses,
+                                            getTotalQuestions()
+                                        );
+                                    })();
+
+                                    return (
+                                        <div
+                                            key={assessment.id}
+                                            className="flex items-center justify-between p-4 rounded-lg border-2 border-primary/20 hover:border-primary/40 transition-all"
+                                        >
+                                            <div className="space-y-1">
+                                                <div className="flex items-center gap-2">
+                                                    <Badge variant="outline" className="border-primary/50">
+                                                        {isSpanish ? "Guía" : "Guide"} {assessment.guideType}
+                                                    </Badge>
+                                                    <Badge
+                                                        variant={
+                                                            assessmentReport.overallRisk.level === "Alto" ||
+                                                                assessmentReport.overallRisk.level === "Muy Alto"
+                                                                ? "destructive"
+                                                                : assessmentReport.overallRisk.level === "Medio"
+                                                                    ? "default"
+                                                                    : "secondary"
+                                                        }
+                                                    >
+                                                        {isSpanish
+                                                            ? assessmentReport.overallRisk.level
+                                                            : assessmentReport.overallRisk.level_en}
+                                                    </Badge>
+                                                </div>
+                                                <p className="text-sm text-muted-foreground flex items-center gap-1">
+                                                    <Calendar className="h-3 w-3" />
+                                                    {new Date(assessment.completedAt || "").toLocaleDateString(
+                                                        isSpanish ? "es-MX" : "en-US",
+                                                        { year: "numeric", month: "long", day: "numeric" }
+                                                    )}
+                                                </p>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <Button
+                                                    onClick={() => {
+                                                        loadAssessment(assessment.id);
+                                                        navigate("/report");
+                                                    }}
+                                                    variant="ghost"
+                                                    size="sm"
+                                                    className="cursor-pointer text-primary hover:text-primary hover:bg-primary/10"
                                                 >
-                                                    {isSpanish
-                                                        ? reportData.overallRisk.level
-                                                        : reportData.overallRisk.level_en}
-                                                </Badge>
-                                            )}
+                                                    <FileText className="h-4 w-4 mr-1" />
+                                                    {isSpanish ? "Ver" : "View"}
+                                                </Button>
+                                                <Button
+                                                    onClick={() => window.print()}
+                                                    variant="ghost"
+                                                    size="sm"
+                                                    className="cursor-pointer hover:bg-primary/10"
+                                                >
+                                                    <Download className="h-4 w-4" />
+                                                </Button>
+                                            </div>
                                         </div>
-                                        <p className="text-sm text-muted-foreground flex items-center gap-1">
-                                            <Calendar className="h-3 w-3" />
-                                            {new Date(assessment.completedAt || "").toLocaleDateString(
-                                                isSpanish ? "es-MX" : "en-US",
-                                                { year: "numeric", month: "long", day: "numeric" }
-                                            )}
-                                        </p>
-                                    </div>
-                                    <div className="flex gap-2">
-                                        <Button
-                                            onClick={() => navigate("/report")}
-                                            variant="ghost"
-                                            size="sm"
-                                            className="cursor-pointer text-primary hover:text-primary hover:bg-primary/10"
-                                        >
-                                            <FileText className="h-4 w-4 mr-1" />
-                                            {isSpanish ? "Ver" : "View"}
-                                        </Button>
-                                        <Button
-                                            onClick={() => window.print()}
-                                            variant="ghost"
-                                            size="sm"
-                                            className="cursor-pointer hover:bg-primary/10"
-                                        >
-                                            <Download className="h-4 w-4" />
-                                        </Button>
-                                    </div>
-                                </div>
+                                    );
+                                })}
                             </div>
                         ) : (
                             <div className="text-center py-12">

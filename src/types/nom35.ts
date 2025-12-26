@@ -11,7 +11,7 @@ export interface Question {
     text_en: string;
     type: ResponseType;
     conditional?: {
-        dependsOn: string; // question ID (e.g., "ServiceClients")
+        dependsOn: string;
         showIf: YesNoValue;
     };
 }
@@ -41,7 +41,10 @@ export interface NOM35Response {
     answer: LikertValue | YesNoValue;
 }
 
+export type AssessmentStatus = "draft" | "completed";
+
 export interface NOM35Assessment {
+    id: string;
     guideType: GuideType;
     responses: NOM35Response[];
     currentCategoryIndex: number;
@@ -50,6 +53,7 @@ export interface NOM35Assessment {
         ServiceClients?: YesNoValue;
         Boss?: YesNoValue;
     };
+    status: AssessmentStatus;
     startedAt: string;
     completedAt?: string;
 }
